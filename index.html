@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Car Catalog</title>
+    <meta name="description" content="Create your dream car model!">
+    <meta name="keywords" content="car, catalog, salon, new car">
+    <meta name="author" content="Radoslaw Winiecki">
+
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="main.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Select car configuration</h1>
+
+</header>
+
+<main>
+
+    <article>
+
+        <form action="order.php" method="post" enctype="multipart/form-data">
+
+            <div class="row">
+
+                <fieldset>
+
+                    <legend> Body type</legend>
+
+                    <div><label><input type="radio" value="1" name="nadwozie" checked> Hatchback </label></div>
+                    <div><label><input type="radio" value="2" name="nadwozie"> Cabriolet </label></div>
+                    <div><label><input type="radio" value="3" name="nadwozie"> Estate Wagon </label></div>
+
+                </fieldset>
+
+            </div>
+
+            <div class="row">
+
+                <label for="engine"> Engine type </label>
+                <select id="engine" name="engine">
+
+                    <option value="w">diesel engine</option>
+                    <option value="b" selected>petrol engine</option>
+                    <option value="e">electric engine</option>
+                    <option value="h">hybrid engine</option>
+
+                </select>
+
+            </div>
+
+            <div class="row">
+
+                <fieldset>
+
+                    <legend> Car equipment</legend>
+
+                    <div class="col">
+                        <div><label><input type="checkbox" name="eq[]" value="1" disabled checked> air conditioning
+                        </label></div>
+                        <div><label><input type="checkbox" name="eq[]" value="2" disabled checked> ESP and ABS systems
+                        </label></div>
+                        <div><label><input type="checkbox" name="eq[]" value="3"> leather upholstery </label></div>
+                        <div><label><input type="checkbox" name="eq[]" value="4"> Cruise control </label></div>
+                    </div>
+
+                    <div class="col">
+                        <div><label><input type="checkbox" name="eq[]" value="5"> rear roof spoiler </label></div>
+                        <div><label><input type="checkbox" name="eq[]" value="6"> bluetooth radio </label></div>
+                        <div><label><input type="checkbox" name="eq[]" value="7"> fog lights </label>
+                        </div>
+                        <div><label><input type="checkbox" name="eq[]" value="8"> tinted rear windows </label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div><label><input type="checkbox" name="eq[]" value="9"> parking sensors </label></div>
+                        <div><label><input type="checkbox" name="eq[]" value="10"> heated seats </label></div>
+                        <div><label><input type="checkbox" name="eq[]" value="11"> folding mirrors </label></div>
+                        <div><label><input type="checkbox" name="eq[]" value="12"> LED daytime running lights
+                        </label></div>
+                    </div>
+
+                </fieldset>
+
+            </div>
+
+            <div class="row">
+
+                <label for="smell"> What does the car smell like? </label>
+
+                <div style="margin-top:10px;">
+                    <select id="smell" name="smell[]" multiple size="4">
+
+                        <option value="k">coconut</option>
+                        <option value="c" selected>lemon</option>
+                        <option value="t">strawberry</option>
+                        <option value="b">peach</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <label> Name <input type="text" name="name" placeholder="What's your name?"></label>
+                <label> Password <input type="password" name="password"></label>
+                <label> Search <input type="search" name="phrase"></label>
+
+            </div>
+
+            <div class="row">
+                <label> How many keys? <input type="number" name="key" step="1"></label>
+            </div>
+
+            <div class="row">
+                <label> E-mail adress <input type="email" name="adress" required></label>
+                <label> Phone number <input type="phon" name="phone" required></label>
+            </div>
+
+            <div class="row">
+                <label> Delivery date <input type="date" name="day"></label>
+                <label> Preferred delivery time <input type="time" name="time" step="1" min="09:00"
+                                                       max="18:00"></label>
+            </div>
+
+            <div class="row">
+                <div><label for="comment"> Comments to order </label></div>
+                <textarea name="comment" id="comment" rows="4" cols="80" maxlength="25" minlength="10"></textarea>
+            </div>
+
+            <div class="row">
+                <label> Upload a photo of the previous car </label> <input type="file" name="image"
+                                                                           accept="image/x-png,image/gif,image/jpeg">
+            </div>
+
+            <div class="row">
+                <label> Varnish color <input type="color" name="color" value="#ff0000"></label>
+            </div>
+
+            <div class="row">
+                <label> Degree of order completion </label>
+                <progress id="implementation" max="100" value="75"></progress>
+            </div>
+
+            <div class="row">
+                <label> Degree of refueling the car </label>
+                <meter min="0" max="100" title="procent" value="30" low="30" high="70" optimum="75"></meter>
+            </div>
+
+            <div class="row">
+                <label> Your website </label><input type="url" name="site">
+            </div>
+
+            <input type="hidden" name="token" value="ug3f5jgh5f7d87874fdg4ddgh">
+
+            <div class="row">
+                <input type="submit" value="I order!">
+                <!--<input type="button" value="I order!">
+                <button type="button">I order!</button>-->
+                <input type="reset" value="Clear the form">
+            </div>
+
+        </form>
+
+    </article>
+
+</main>
+
+</body>
+</html>
